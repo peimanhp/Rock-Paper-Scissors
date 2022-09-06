@@ -11,10 +11,10 @@ let computerWins;
 let playerInput = prompt(
   "Enter first letter of your object to play (Between R & P & S)"
 );
-if (playerInput == "r" || "R") playerChoice = 0;
-else if (playerInput == "p" || "P") playerChoice = 1;
-else if (playerInput == "s" || "S") playerChoice = 2;
-else if (playerInput != "r" || "p" || "s" || "R" || "P" || "S") {
+if (playerInput == "r" || playerInput == "R") playerChoice = 0;
+else if (playerInput == "p" || playerInput == "P") playerChoice = 1;
+else if (playerInput == "s" || playerInput == "S") playerChoice = 2;
+else {
   alert(`Please select a letter between "R" or "P" or "S"`);
 }
 console.log(`Player choice: ${playerChoice}`);
