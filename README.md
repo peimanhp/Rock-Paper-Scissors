@@ -1,3 +1,2 @@
 # Rock-Paper-Scissors
-This is first project of OdinProject
-Developer: peiman Hosseini
+Live Demo: https://peimanhp.github.io/Rock-Paper-Scissors/
