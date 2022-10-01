@@ -2,29 +2,80 @@
 <html lang="en">
 
 <head>
-    <title>Rock Paper Scissors</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Rock Paper Scissors</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    
-
+  <!-- Bootstrap CSS v5.2.0-beta1 -->
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
-    <header>
-        <!-- place navbar here -->
-    </header>
-    <main>
+  <main>
+    <div class="p-5 ">
+      <h1 class="title text-center">Rock, Paper, Scissors?</h1>
+      <h3 class="dots text-center">...</h3>
+    </div>
+    <div class="container">
+      <div class="row mt-4">
+        <div class="col bg-neutral rounded-3">
+          <H2 class="text-center mt-3 melon-color">PLAYER</H2>
+          <h4 class="text-center melon-color">SCORE:</h4>
+          <div class="mb-4 text-center">
+            <button class="btn btn-warning human-buttons rounded-4 m-2">
+              <img src="./resources/rock.png" width="120px" alt="rock">
+              <h4 class="btn-title">ROCK</h4>
+            </button>
+            <button class="btn btn-warning human-buttons rounded-4 m-2">
+              <img src="./resources/paper.png" width="120px" alt="paper">
+              <h4 class="btn-title">PAPER</h4>
+            </button>
+            <button class="btn btn-warning human-buttons rounded-4 m-2">
+              <img src="./resources/scissors.png" width="120px" alt="scissors">
+              <h4 class="btn-title">SCISSORS</h4>
+            </button>
+          </div>
+        </div>
+        <div class="col bg-neutral rounded-3">
+          <H2 class="text-center mt-3 melon-color">COMPUTER</H2>
+          <h4 class="text-center melon-color">SCORE:</h4>
+          <div class="mb-4 text-center">
+            <button class="btn btn-warning human-buttons rounded-4 m-2 no-hover">
+              <img src="./resources/rock.png" width="120px" alt="rock">
+              <h4 class="btn-title">ROCK</h4>
+            </button>
+            <button class="btn btn-warning human-buttons rounded-4 m-2 no-hover">
+              <img src="./resources/paper.png" width="120px" alt="paper">
+              <h4 class="btn-title">PAPER</h4>
+            </button>
+            <button class="btn btn-warning human-buttons rounded-4 m-2 no-hover">
+              <img src="./resources/scissors.png" width="120px" alt="scissors">
+              <h4 class="btn-title">SCISSORS</h4>
+            </button>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    <div class="container wins-history rounded-3 bg-neutral mt-3">
+      <h3 class="text-center">WINS HISTORY</h3>
+      <ul class="logs text-center">
+        <li>win1</li>
+        <li>win2</li>
+        <li>win3</li>
+      </ul>
+    </div>
+  </main>
+  <footer>
+    <!-- place footer here -->
+  </footer>
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="./js/bootstrap.bundle.min.js">
+  </script>
 
-    </main>
-    <footer>
-        <!-- place footer here -->
-    </footer>
-    <!-- rock paper scissors js -->
-    <script src="./script.js"></script>
-
-    
+  <script src=""></script>
 </body>
 
 </html>

@@ -1,0 +1,74 @@
+@font-face {
+  font-family: roboto;
+  src: url(../resources/roboto-regular-webfont.woff2);
+}
+
+@font-face {
+  font-family: roboto-bold;
+  src: url(../resources/roboto-bold-webfont.woff2);
+}
+
+@font-face {
+  font-family: bebas;
+  src: url(../resources/Bebas-Regular.ttf);
+}
+
+:root {
+  --neutral-color: #efefef;
+  --carbon-color: #a9a9a9;
+  --watermelon-color: #ff3b3f;
+  --sky-color: #caebf2;
+}
+
+* {
+  font-family: bebas, roboto, Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+body {
+  margin: 0;
+
+}
+
+.title {
+  font-family: bebas, roboto-bold, Arial, Helvetica, sans-serif; 
+  font-size: 4em;
+}
+
+.dots {
+  color: var(--watermelon-color);
+  font-size: 6em;
+  line-height: 0;
+}
+
+.human-buttons {
+  max-width: 10em;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
+  transition: 0.3s transform cubic-bezier(0.155, 1.105, 0.295, 1.12),
+    0.3s box-shadow,
+    0.3s -webkit-transform cubic-bezier(0.155, 1.105, 0.295, 1.12);
+  /* background-color: var(--sky-color); */
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
+}
+
+.no-hover{
+    pointer-events: none;
+}
+
+.bg-neutral {
+  background-color: var(--neutral-color);
+}
+
+.melon-color {
+  color: var(--watermelon-color);
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
