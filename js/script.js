@@ -1,10 +1,9 @@
-const rock = 0;
-const paper = 1;
-const scissors = 2;
 let playerChoice;
 let computerChoice;
 let playerScore = 0;
 let computerScore = 0;
+let li;
+let roundNum = 1;
 
 // player choice:
 const rockBtn = document.getElementById("rock");
@@ -15,96 +14,122 @@ paperBtn.addEventListener("click", playGame);
 scissorsBtn.addEventListener("click", playGame);
 
 // computer choice:
+const comRockBtn = document.getElementById("rock_com");
+const comPaperBtn = document.getElementById("paper_com");
+const comScissorsBtn = document.getElementById("scissors_com");
+
 function computerPlay() {
   let randomPlay = Math.floor(Math.random() * 3);
-  if (randomPlay == 0) return "ROCK";
-  else if (randomPlay == 2) return "PAPER";
-  else return "SCISSORS";
-}
-
-// lets play!
-function playGame(playerChoice, computerChoice) {
-  playerChoice = this.querySelector("h4").textContent;
-  console.log(`Your choice: ${playerChoice}`);
-  computerChoice = computerPlay();
-  console.log(`Computer choice: ${computerChoice}`);
-  if (playerChoice == 'ROCK' && computerChoice == 'ROCK') {
-    console.log(`it's tie
-  Rock ties with rock`);
-    alert(`it's tie
-  Rock ties with rock
-  Player: ${playerScore}
-  Computer: ${computerScore}`);
-  } else if (playerChoice == 'ROCK' && computerChoice == 'PAPER') {
-    computerScore++;
-    console.log(`You lost!
-  Rock is beaten by Paper`);
-    alert(`You lost!
-  Rock is beaten by Paper
-  Player: ${playerScore}
-  Computer: ${computerScore}`);
-  } else if (playerChoice == 'ROCK' && computerChoice == 'SCISSORS') {
-    playerScore++;
-    console.log(`You Won!
-  Rock beats scissors`);
-    alert(`You Won!
-  Rock beats scissors
-  Player: ${playerScore}
-  Computer: ${computerScore}`);
-  } else if (playerChoice == 'PAPER' && computerChoice == 'ROCK') {
-    playerScore++;
-    console.log(`You Won!
-  Paper beats rock`);
-    alert(`You Won!
-  Paper beats rock
-  Player: ${playerScore}
-  Computer: ${computerScore}`);
-  } else if (playerChoice == 'PAPER' && computerChoice == 'PAPER') {
-    console.log(`it's tie
-  Paper ties with Paper`);
-    alert(`it's tie
-  Paper ties with Paper
-  Player: ${playerScore}
-  Computer: ${computerScore}`);
-  } else if (playerChoice == 'PAPER' && computerChoice == 'SCISSORS') {
-    computerScore++;
-    console.log(`You lost!
-  Paper is beaten by scissors`);
-    alert(`You lost!
-  Paper is beaten by scissors
-  Player: ${playerScore}
-  Computer: ${computerScore}`);
-  } else if (playerChoice == "SCISSORS" && computerChoice == "ROCK") {
-    computerScore++;
-    console.log(`You lost!
-  Scissors is beaten by rock`);
-    alert(`You lost!
-  Scissors is beaten by rock
-  Player: ${playerScore}
-  Computer: ${computerScore}`);
-  } else if (playerChoice == "SCISSORS" && computerChoice == "PAPER") {
-    playerScore++;
-    console.log(`You Won!
-  Scissors beats paper`);
-    alert(`You Won!
-  Scissors beats paper
-  Player: ${playerScore}
-  Computer: ${computerScore}`);
-  } else if (playerChoice == "SCISSORS" && computerChoice == "SCISSORS") {
-    console.log(`it's tie
-  Scissors ties with scissors`);
-    alert(`it's tie
-  Scissors ties with scissors
-  Player: ${playerScore}
-  Computer: ${computerScore}`);
+  if (randomPlay == 0) {
+    comRockBtn.classList.add("animation");
+    return "ROCK";
+  } else if (randomPlay == 2) {
+    comPaperBtn.classList.add("animation");
+    return "PAPER";
+  } else {
+    comScissorsBtn.classList.add("animation");
+    return "SCISSORS";
   }
 }
 
-// Final winner
-if (playerScore == 5) {
-  alert("You won the game!");
-  console.log("You won the game!");
-} else if (computerScore == 5) {
-  alert("You lost the game!");
-  console.log("You lost the game!");
+// grab score board elements
+const playerScoreBoard = document.getElementById("player-score");
+const computerScoreBoard = document.getElementById("computer-score");
+
+// lets play!
+function playGame(playerChoice, computerChoice) {
+  // remove scale on PC buttons
+  comRockBtn.classList.remove("animation");
+  comPaperBtn.classList.remove("animation");
+  comScissorsBtn.classList.remove("animation");
+
+  // remove red color of score borads
+  playerScoreBoard.classList.remove("red-color");
+  computerScoreBoard.classList.remove("red-color");
+
+  // player & computer choices
+  playerChoice = this.querySelector("h4").textContent;
+  computerChoice = computerPlay();
+
+  let changePlayerScore = playerScore;
+  let changeComputerScore = computerScore;
+
+  if (
+    //ties
+    (playerChoice == "ROCK" && computerChoice == "ROCK") ||
+    (playerChoice == "PAPER" && computerChoice == "PAPER") ||
+    (playerChoice == "SCISSORS" && computerChoice == "SCISSORS")
+  ) {
+    playerScore++;
+    computerScore++;
+    // set tie log
+    li = document.createElement("li");
+    li.appendChild(
+      document.createTextNode(
+        `Round ${roundNum}: it's tie
+  ${playerChoice} ties with ${computerChoice}`
+      )
+    );
+  } else if (
+    // computer wins
+    (playerChoice == "ROCK" && computerChoice == "PAPER") ||
+    (playerChoice == "PAPER" && computerChoice == "SCISSORS") ||
+    (playerChoice == "SCISSORS" && computerChoice == "ROCK")
+  ) {
+    computerScore++;
+    // set lost log
+    li = document.createElement("li");
+    li.appendChild(
+      document.createTextNode(
+        `Round ${roundNum}: You lost!
+  ${playerChoice} is beaten by ${computerChoice}`
+      )
+    );
+  } else if (
+    // player wins
+    (playerChoice == "ROCK" && computerChoice == "SCISSORS") ||
+    (playerChoice == "PAPER" && computerChoice == "ROCK") ||
+    (playerChoice == "SCISSORS" && computerChoice == "PAPER")
+  ) {
+    playerScore++;
+    // set won log
+    li = document.createElement("li");
+    li.appendChild(
+      document.createTextNode(
+        `Round ${roundNum}: You Won!
+  ${playerChoice} beats ${computerChoice}`
+      )
+    );
+  }
+  // show scores on player & computer board
+  playerScoreBoard.textContent = `Score: ${playerScore}`;
+  computerScoreBoard.textContent = `Score: ${computerScore}`;
+
+  // scores colors change to red
+  if (changePlayerScore != playerScore) {
+    playerScoreBoard.classList.add("red-color");
+  };
+  if (changeComputerScore != computerScore) {
+    computerScoreBoard.classList.add("red-color");
+  };
+
+  // game logs
+  let ul = document.querySelector(".logs");
+  ul.appendChild(li);
+  roundNum++;
+
+  // Final winner
+  const modal = document.getElementById("modal_container");
+  const winner = document.getElementById("win_message");
+  const playAgain = document.getElementById("play_again");
+  if (playerScore == 5) {
+    modal.classList.add("show");
+  } else if (computerScore == 5) {
+    winner.innerHTML = "YOU LOST!";
+    modal.classList.add("show");
+  }
+  // button for reload game
+  playAgain.addEventListener("click", () => {
+    window.location.reload(true);
+  });
 }

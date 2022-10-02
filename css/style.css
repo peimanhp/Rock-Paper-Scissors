@@ -41,7 +41,7 @@ body {
   line-height: 0;
 }
 
-.human-buttons, .computer-buttons {
+.human-buttons {
   max-width: 10em;
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
   transition: 0.3s transform cubic-bezier(0.155, 1.105, 0.295, 1.12),
@@ -49,13 +49,23 @@ body {
     0.3s -webkit-transform cubic-bezier(0.155, 1.105, 0.295, 1.12);
 }
 
-button:hover {
+.human-buttons:hover {
   transform: scale(1.05);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
 }
 
-.no-hover {
-  pointer-events: none;
+.computer-buttons {
+  max-width: 10em;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
+  transition: 0.3s transform cubic-bezier(0.155, 1.105, 0.295, 1.12),
+    0.3s box-shadow,
+    0.3s -webkit-transform cubic-bezier(0.155, 1.105, 0.295, 1.12);
+    transition-duration: 1s;
+}
+
+.computer-buttons.animation {
+  transform: scale(1.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
 }
 
 .bg-neutral {
@@ -71,3 +81,63 @@ ul {
   padding-left: 0;
 }
 
+.logs {
+  max-height: 12em;
+  overflow: auto;  
+}
+
+.history-title {
+  color: var(--watermelon-color);
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;  
+  background-color: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.modal-container.show {  
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.my-modal {  
+  width: 600px;
+  max-width: 100%;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 100px 50px;
+}
+
+.my-modal h2 {
+  font-size: 4em;
+  color: var(--watermelon-color);
+}
+
+.my-modal button {
+  font-size: 1.5em;
+}
+
+.pl-score, .pc-score {
+  transition-duration: 0.5s;
+}
+
+.pl-score.red-color { color: var(--watermelon-color);
+transform: scale(1.2); }
+
+.pc-score.red-color { color: var(--watermelon-color);
+transform: scale(1.2); }
