@@ -6,11 +6,12 @@ let li;
 let roundNum = 1;
 
 // scroll on load
-window.onload = setTimeout(scrollY, 1000);
+window.onload = setTimeout(scrollY, 1000)
 function scrollY() {
-  console.log("scroll");
-  const gameSection = document.getElementById("game_section");
-  gameSection.scrollTop = gameSection.scrollHeight;
+  window.scroll({
+    top: 435,
+    behavior: "smooth",
+  });
 }
 
 // player choice:
@@ -45,9 +46,6 @@ const playerScoreBoard = document.getElementById("player-score");
 const computerScoreBoard = document.getElementById("computer-score");
 
 // lets play!
-function delayPlay() {
-  setTimeout(playGame, 1000);
-}
 function playGame(playerChoice, computerChoice) {
   // remove scale on PC buttons
   comRockBtn.classList.remove("animation");
@@ -154,5 +152,3 @@ const footer = document.querySelector(".footer");
 let date = new Date();
 let year = date.getFullYear();
 footer.textContent = `Copyright © ${year} Peiman Hosseini`;
-
-module.exports = playGame;
