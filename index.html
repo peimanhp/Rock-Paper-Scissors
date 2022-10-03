@@ -13,66 +13,73 @@
 </head>
 
 <body>
-  <main>
-    <!-- header title & dots -->
-    <div class="p-5 ">
-      <h1 class="title text-center">Rock, Paper, Scissors?</h1>
-      <h3 class="dots text-center">...</h3>
-    </div>
-    <!-- game play section -->
-    <div class="container text-center">
-      <div class="row g-2 g-sm-3 mt-4" id="game_section">
-        <!-- player section -->
-        <div class="col ">
-          <div class="me-md-1 bg-neutral rounded-3">
-            <H2 class="text-center pt-3 melon-color">YOU</H2>
-            <h4 class="text-center pl-score" id="player-score">SCORE: 0</h4>
-            <div class="pb-4 text-center">
-              <button class="btn btn-warning human-buttons rounded-4 m-2" id="rock">
-                <img src="./resources/rock.png" width="120px" alt="rock">
-                <h4 class="btn-title">ROCK</h4>
-              </button>
-              <button class="btn btn-warning human-buttons rounded-4 m-2" id="paper">
-                <img src="./resources/paper.png" width="120px" alt="paper">
-                <h4 class="btn-title">PAPER</h4>
-              </button>
-              <button class="btn btn-warning human-buttons rounded-4 m-2" id="scissors">
-                <img src="./resources/scissors.png" width="120px" alt="scissors">
-                <h4 class="btn-title">SCISSORS</h4>
-              </button>
+  <div class="wrapper">
+    <main>
+      <!-- header title & dots -->
+      <div class="p-5 ">
+        <h1 class="title text-center">Rock, Paper, Scissors?</h1>
+        <h3 class="dots text-center">...</h3>
+      </div>
+      <!-- game play section -->
+      <div class="container text-center">
+        <div class="row g-2 g-sm-3 mt-4" id="game_section">
+          <!-- player section -->
+          <div class="col ">
+            <div class="me-md-1 bg-neutral rounded-3">
+              <H2 class="text-center pt-3 melon-color">YOU</H2>
+              <h4 class="text-center pl-score" id="player-score">SCORE: 0</h4>
+              <div class="pb-4 text-center">
+                <button class="btn btn-warning human-buttons rounded-4 m-2" id="rock">
+                  <img src="./resources/rock.png" width="120px" alt="rock">
+                  <h4 class="btn-title">ROCK</h4>
+                </button>
+                <button class="btn btn-warning human-buttons rounded-4 m-2" id="paper">
+                  <img src="./resources/paper.png" width="120px" alt="paper">
+                  <h4 class="btn-title">PAPER</h4>
+                </button>
+                <button class="btn btn-warning human-buttons rounded-4 m-2" id="scissors">
+                  <img src="./resources/scissors.png" width="120px" alt="scissors">
+                  <h4 class="btn-title">SCISSORS</h4>
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- computer section -->
+          <div class="col ">
+            <div class="ms-md-1 bg-neutral rounded-3">
+              <H2 class="text-center pt-3 melon-color">COMPUTER</H2>
+              <h4 class="text-center pc-score" id="computer-score">SCORE: 0</h4>
+              <div class="pb-4 text-center">
+                <button class="btn btn-warning computer-buttons rounded-4 m-2" id="rock_com">
+                  <img src="./resources/rock.png" width="120px" alt="rock">
+                  <h4 class="btn-title">ROCK</h4>
+                </button>
+                <button class="btn btn-warning computer-buttons rounded-4 m-2" id="paper_com">
+                  <img src="./resources/paper.png" width="120px" alt="paper">
+                  <h4 class="btn-title">PAPER</h4>
+                </button>
+                <button class="btn btn-warning computer-buttons rounded-4 m-2" id="scissors_com">
+                  <img src="./resources/scissors.png" width="120px" alt="scissors">
+                  <h4 class="btn-title">SCISSORS</h4>
+                </button>
+              </div>
             </div>
           </div>
         </div>
-        <!-- computer section -->
-        <div class="col ">
-          <div class="ms-md-1 bg-neutral rounded-3">
-            <H2 class="text-center pt-3 melon-color">COMPUTER</H2>
-            <h4 class="text-center pc-score" id="computer-score">SCORE: 0</h4>
-            <div class="pb-4 text-center">
-              <button class="btn btn-warning computer-buttons rounded-4 m-2" id="rock_com">
-                <img src="./resources/rock.png" width="120px" alt="rock">
-                <h4 class="btn-title">ROCK</h4>
-              </button>
-              <button class="btn btn-warning computer-buttons rounded-4 m-2" id="paper_com">
-                <img src="./resources/paper.png" width="120px" alt="paper">
-                <h4 class="btn-title">PAPER</h4>
-              </button>
-              <button class="btn btn-warning computer-buttons rounded-4 m-2" id="scissors_com">
-                <img src="./resources/scissors.png" width="120px" alt="scissors">
-                <h4 class="btn-title">SCISSORS</h4>
-              </button>
-            </div>
-          </div>
+        <!-- wins history -->
+        <div class="container wins-history rounded-3 bg-neutral my-4">
+          <h3 class="text-center history-title">WINS HISTORY</h3>
+          <ul class="logs text-center pb-2">
+          </ul>
         </div>
       </div>
-      <!-- wins history -->
-      <div class="container wins-history rounded-3 bg-neutral my-4">
-        <h3 class="text-center history-title">WINS HISTORY</h3>
-        <ul class="logs text-center pb-2">
-        </ul>
-      </div>
-    </div>
-  </main>
+    </main>
+
+    <!-- footer -->
+    <footer class="footer">
+      Copyright © 2022 Peiman Hosseini
+    </footer>
+  </div>
   <!-- winner pop-up message -->
   <div class="modal-container rounded-3 d-flex justify-content-center align-items-center" id="modal_container">
     <div class="my-modal shadow text-center">
@@ -81,9 +88,6 @@
       <button class="btn btn-danger px-4" id="play_again">PLAY AGAIN</button>
     </div>
   </div>
-  <footer class="footer bg-neutral py-2">
-    Copyright © 2022 Peiman Hosseini
-  </footer>
   <!-- Bootstrap JavaScript Libraries -->
   <script src="./js/bootstrap.bundle.min.js">
   </script>

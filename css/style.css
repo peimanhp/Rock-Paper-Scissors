@@ -26,8 +26,10 @@
   text-decoration: none;
 }
 
+html,
 body {
   margin: 0;
+  height: 100%;
 }
 
 .title {
@@ -91,10 +93,21 @@ ul {
 }
 
 .footer {
+  color: white;
+  background-color: var(--carbon-color);
+  margin-top: auto;
   left: 0;
   bottom: 0;
   width: 100%;
   text-align: center;
+  padding: 0.5em 0;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100%;
 }
 
 .modal-container {
