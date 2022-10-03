@@ -5,6 +5,12 @@ let computerScore = 0;
 let li;
 let roundNum = 1;
 
+// scroll on load
+window.onload = function () {
+  const gameSection = document.getElementById("game_section");
+  gameSection.scrollTop = gameSection.scrollHeight;
+};
+
 // player choice:
 const rockBtn = document.getElementById("rock");
 const paperBtn = document.getElementById("paper");

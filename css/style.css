@@ -117,10 +117,10 @@ ul {
 
 .my-modal {  
   width: 600px;
-  max-width: 100%;
+  max-width: 75%;
   background-color: #fff;
   border-radius: 5px;
-  padding: 100px 50px;
+  padding: 80px 50px;
 }
 
 .my-modal h2 {
