@@ -8,7 +8,7 @@ let roundNum = 1;
 // scroll on load
 window.onload = setTimeout(scrollY, 1000);
 function scrollY() {
-  console.log('scroll');
+  console.log("scroll");
   const gameSection = document.getElementById("game_section");
   gameSection.scrollTop = gameSection.scrollHeight;
 }
@@ -45,6 +45,9 @@ const playerScoreBoard = document.getElementById("player-score");
 const computerScoreBoard = document.getElementById("computer-score");
 
 // lets play!
+function delayPlay() {
+  setTimeout(playGame, 1000);
+}
 function playGame(playerChoice, computerChoice) {
   // remove scale on PC buttons
   comRockBtn.classList.remove("animation");
@@ -130,7 +133,11 @@ function playGame(playerChoice, computerChoice) {
   const modal = document.getElementById("modal_container");
   const winner = document.getElementById("win_message");
   const playAgain = document.getElementById("play_again");
-  if (playerScore == 5) {
+  if (playerScore == 5 && computerScore == 5) {
+    winner.innerHTML = `WOW! IT'S TIE!!`;
+    modal.classList.add("show");
+  } else if (playerScore == 5) {
+    winner.innerHTML = "YOU WON!";
     modal.classList.add("show");
   } else if (computerScore == 5) {
     winner.innerHTML = "YOU LOST!";
@@ -141,3 +148,11 @@ function playGame(playerChoice, computerChoice) {
     window.location.reload(true);
   });
 }
+
+// set footer content
+const footer = document.querySelector(".footer");
+let date = new Date();
+let year = date.getFullYear();
+footer.textContent = `Copyright © ${year} Peiman Hosseini`;
+
+module.exports = playGame;
