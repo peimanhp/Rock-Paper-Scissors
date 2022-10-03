@@ -60,7 +60,7 @@ body {
   transition: 0.3s transform cubic-bezier(0.155, 1.105, 0.295, 1.12),
     0.3s box-shadow,
     0.3s -webkit-transform cubic-bezier(0.155, 1.105, 0.295, 1.12);
-    transition-duration: 1s;
+  transition-duration: 1s;
 }
 
 .computer-buttons.animation {
@@ -83,7 +83,7 @@ ul {
 
 .logs {
   max-height: 12em;
-  overflow: auto;  
+  overflow: auto;
 }
 
 .history-title {
@@ -91,7 +91,6 @@ ul {
 }
 
 .footer {
-  position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
@@ -103,19 +102,19 @@ ul {
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;  
+  height: 100vh;
   background-color: rgba(0, 0, 0, 0.6);
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
 }
 
-.modal-container.show {  
+.modal-container.show {
   opacity: 1;
   pointer-events: auto;
 }
 
-.my-modal {  
+.my-modal {
   width: 600px;
   max-width: 75%;
   background-color: #fff;
@@ -132,12 +131,17 @@ ul {
   font-size: 1.5em;
 }
 
-.pl-score, .pc-score {
+.pl-score,
+.pc-score {
   transition-duration: 0.5s;
 }
 
-.pl-score.red-color { color: var(--watermelon-color);
-transform: scale(1.2); }
+.pl-score.red-color {
+  color: var(--watermelon-color);
+  transform: scale(1.2);
+}
 
-.pc-score.red-color { color: var(--watermelon-color);
-transform: scale(1.2); }
+.pc-score.red-color {
+  color: var(--watermelon-color);
+  transform: scale(1.2);
+}

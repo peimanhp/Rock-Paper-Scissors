@@ -6,10 +6,12 @@ let li;
 let roundNum = 1;
 
 // scroll on load
-window.onload = function () {
+window.onload = setTimeout(scrollY, 1000);
+function scrollY() {
+  console.log('scroll');
   const gameSection = document.getElementById("game_section");
   gameSection.scrollTop = gameSection.scrollHeight;
-};
+}
 
 // player choice:
 const rockBtn = document.getElementById("rock");
@@ -114,10 +116,10 @@ function playGame(playerChoice, computerChoice) {
   // scores colors change to red
   if (changePlayerScore != playerScore) {
     playerScoreBoard.classList.add("red-color");
-  };
+  }
   if (changeComputerScore != computerScore) {
     computerScoreBoard.classList.add("red-color");
-  };
+  }
 
   // game logs
   let ul = document.querySelector(".logs");
