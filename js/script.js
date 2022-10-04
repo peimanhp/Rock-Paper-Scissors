@@ -6,7 +6,7 @@ let li;
 let roundNum = 1;
 
 // scroll on load
-window.onload = setTimeout(scrollY, 1000)
+window.onload = setTimeout(scrollY, 1000);
 function scrollY() {
   window.scroll({
     top: 435,
@@ -30,13 +30,25 @@ const comScissorsBtn = document.getElementById("scissors_com");
 function computerPlay() {
   let randomPlay = Math.floor(Math.random() * 3);
   if (randomPlay == 0) {
-    comRockBtn.classList.add("animation");
+    comRockBtn.style.backgroundColor = "red";
+    setTimeout(() => {
+      comRockBtn.style.backgroundColor = "#ffb607";
+      comRockBtn.classList.add("animation");
+    }, 50);
     return "ROCK";
   } else if (randomPlay == 2) {
-    comPaperBtn.classList.add("animation");
+    comPaperBtn.style.backgroundColor = "red";
+    setTimeout(() => {
+      comPaperBtn.style.backgroundColor = "#ffb607";
+      comPaperBtn.classList.add("animation");
+    }, 50);
     return "PAPER";
   } else {
-    comScissorsBtn.classList.add("animation");
+    comScissorsBtn.style.backgroundColor = "red";
+    setTimeout(() => {
+      comScissorsBtn.style.backgroundColor = "#ffb607";
+      comScissorsBtn.classList.add("animation");
+    }, 50);
     return "SCISSORS";
   }
 }
