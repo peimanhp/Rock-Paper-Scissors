@@ -35,6 +35,9 @@ function computerPlay() {
       comRockBtn.style.backgroundColor = "#ffb607";
       comRockBtn.classList.add("animation");
     }, 50);
+    setTimeout(() => {
+      comRockBtn.classList.remove("animation");
+    }, 500);
     return "ROCK";
   } else if (randomPlay == 2) {
     comPaperBtn.style.backgroundColor = "red";
@@ -42,6 +45,9 @@ function computerPlay() {
       comPaperBtn.style.backgroundColor = "#ffb607";
       comPaperBtn.classList.add("animation");
     }, 50);
+    setTimeout(() => {      
+      comPaperBtn.classList.remove("animation");
+    }, 500);
     return "PAPER";
   } else {
     comScissorsBtn.style.backgroundColor = "red";
@@ -49,6 +55,9 @@ function computerPlay() {
       comScissorsBtn.style.backgroundColor = "#ffb607";
       comScissorsBtn.classList.add("animation");
     }, 50);
+    setTimeout(() => {
+      comScissorsBtn.classList.remove("animation");
+    }, 500);
     return "SCISSORS";
   }
 }
@@ -162,6 +171,7 @@ function playGame(playerChoice, computerChoice) {
   });
 }
 
+// scroll to top at the end of game
 function scrollToZero() {
   window.scroll({
     top: 0,
