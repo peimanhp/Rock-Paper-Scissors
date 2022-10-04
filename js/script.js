@@ -45,7 +45,7 @@ function computerPlay() {
       comPaperBtn.style.backgroundColor = "#ffb607";
       comPaperBtn.classList.add("animation");
     }, 50);
-    setTimeout(() => {      
+    setTimeout(() => {
       comPaperBtn.classList.remove("animation");
     }, 500);
     return "PAPER";
@@ -68,14 +68,6 @@ const computerScoreBoard = document.getElementById("computer-score");
 
 // lets play!
 function playGame(playerChoice, computerChoice) {
-  // remove scale on PC buttons
-  comRockBtn.classList.remove("animation");
-  comPaperBtn.classList.remove("animation");
-  comScissorsBtn.classList.remove("animation");
-
-  // remove red color of score borads
-  playerScoreBoard.classList.remove("red-color");
-  computerScoreBoard.classList.remove("red-color");
 
   // player & computer choices
   playerChoice = this.querySelector("h4").textContent;
@@ -138,9 +130,15 @@ function playGame(playerChoice, computerChoice) {
   // scores colors change to red
   if (changePlayerScore != playerScore) {
     playerScoreBoard.classList.add("red-color");
+    setTimeout(() => {
+      playerScoreBoard.classList.remove("red-color");
+    }, 500);
   }
   if (changeComputerScore != computerScore) {
     computerScoreBoard.classList.add("red-color");
+    setTimeout(() => {
+      computerScoreBoard.classList.remove("red-color");
+    }, 500);
   }
 
   // game logs
