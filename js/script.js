@@ -165,7 +165,16 @@ function playGame(playerChoice, computerChoice) {
   }
   // button for reload game
   playAgain.addEventListener("click", () => {
-    window.location.reload(true);
+    playerScore = 0;
+    computerScore = 0;
+    playerScoreBoard.textContent = `Score: ${playerScore}`;
+    computerScoreBoard.textContent = `Score: ${computerScore}`;
+    roundNum = 1;
+    modal.classList.remove("show");
+    playerScoreBoard.classList.remove("red-color");
+    ul.innerHTML = '';
+    scrollY();    
+    // window.location.reload(true);
   });
 }
 
