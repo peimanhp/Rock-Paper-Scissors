@@ -32,30 +32,33 @@ function computerPlay() {
   if (randomPlay == 0) {
     comRockBtn.style.backgroundColor = "red";
     setTimeout(() => {
-      comRockBtn.style.backgroundColor = "#ffb607";
+      comRockBtn.style.backgroundColor = "#ffa507";
       comRockBtn.classList.add("animation");
     }, 50);
     setTimeout(() => {
+      comRockBtn.style.backgroundColor = "#ffc107";
       comRockBtn.classList.remove("animation");
     }, 500);
     return "ROCK";
   } else if (randomPlay == 2) {
     comPaperBtn.style.backgroundColor = "red";
     setTimeout(() => {
-      comPaperBtn.style.backgroundColor = "#ffb607";
+      comPaperBtn.style.backgroundColor = "#ffa507";
       comPaperBtn.classList.add("animation");
     }, 50);
     setTimeout(() => {
+      comPaperBtn.style.backgroundColor = "#ffc107";
       comPaperBtn.classList.remove("animation");
     }, 500);
     return "PAPER";
   } else {
     comScissorsBtn.style.backgroundColor = "red";
     setTimeout(() => {
-      comScissorsBtn.style.backgroundColor = "#ffb607";
+      comScissorsBtn.style.backgroundColor = "#ffa507";
       comScissorsBtn.classList.add("animation");
     }, 50);
     setTimeout(() => {
+      comScissorsBtn.style.backgroundColor = "#ffc107";
       comScissorsBtn.classList.remove("animation");
     }, 500);
     return "SCISSORS";

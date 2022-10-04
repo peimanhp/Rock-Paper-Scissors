@@ -65,7 +65,6 @@ body {
 
 .computer-buttons.animation {
   transform: scale(1.15);
-  background-color: #ffb607;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
 }
 
