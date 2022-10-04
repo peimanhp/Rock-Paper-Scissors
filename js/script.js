@@ -146,16 +146,26 @@ function playGame(playerChoice, computerChoice) {
   if (playerScore == 5 && computerScore == 5) {
     winner.innerHTML = `WOW! IT'S TIE!!`;
     modal.classList.add("show");
+    scrollToZero();
   } else if (playerScore == 5) {
     winner.innerHTML = "YOU WON!";
     modal.classList.add("show");
+    scrollToZero();
   } else if (computerScore == 5) {
     winner.innerHTML = "YOU LOST!";
     modal.classList.add("show");
+    scrollToZero();
   }
   // button for reload game
   playAgain.addEventListener("click", () => {
     window.location.reload(true);
+  });
+}
+
+function scrollToZero() {
+  window.scroll({
+    top: 0,
+    behavior: "smooth",
   });
 }
 
