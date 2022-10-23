@@ -34,7 +34,7 @@ function computerPlay() {
       var run = anime.timeline({});
       run
         .add({
-          targets: comRockBtn,
+          targets: comRockBtn,          
           scale: {
             delay: 500,
             value: 1.2,
@@ -50,7 +50,7 @@ function computerPlay() {
           },
           backgroundColor: ["#fcb900", "##FFCA2C"],
           duration: 1000,
-          easing: "easeInOutBack",
+          easing: "easeInOutBack",          
         });
     }
     animation();
@@ -60,7 +60,7 @@ function computerPlay() {
       var run = anime.timeline({});
       run
         .add({
-          targets: comPaperBtn,
+          targets: comPaperBtn,          
           scale: {
             delay: 500,
             value: 1.2,
@@ -70,7 +70,7 @@ function computerPlay() {
           easing: "easeInOutBack",
         })
         .add({
-          targets: comPaperBtn,
+          targets: comPaperBtn,          
           scale: {
             value: 1,
           },
@@ -86,7 +86,7 @@ function computerPlay() {
       var run = anime.timeline({});
       run
         .add({
-          targets: comScissorsBtn,
+          targets: comScissorsBtn,          
           scale: {
             delay: 500,
             value: 1.2,
