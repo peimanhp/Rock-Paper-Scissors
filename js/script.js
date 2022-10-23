@@ -30,37 +30,82 @@ const comScissorsBtn = document.getElementById("scissors_com");
 function computerPlay() {
   let randomPlay = Math.floor(Math.random() * 3);
   if (randomPlay == 0) {
-    comRockBtn.style.backgroundColor = "red";
-    setTimeout(() => {
-      comRockBtn.style.backgroundColor = "#ffa507";
-      comRockBtn.classList.add("animation");
-    }, 50);
-    setTimeout(() => {
-      comRockBtn.style.backgroundColor = "#ffc107";
-      comRockBtn.classList.remove("animation");
-    }, 500);
+    function animation() {
+      var run = anime.timeline({});
+      run
+        .add({
+          targets: comRockBtn,
+          scale: {
+            delay: 500,
+            value: 1.2,
+          },
+          backgroundColor: ["#ff0000", "#fcb900"],
+          duration: 1000,
+          easing: "easeInOutBack",
+        })
+        .add({
+          targets: comRockBtn,
+          scale: {
+            value: 1,
+          },
+          backgroundColor: ["#fcb900", "##FFCA2C"],
+          duration: 1000,
+          easing: "easeInOutBack",
+        });
+    }
+    animation();
     return "ROCK";
   } else if (randomPlay == 2) {
-    comPaperBtn.style.backgroundColor = "red";
-    setTimeout(() => {
-      comPaperBtn.style.backgroundColor = "#ffa507";
-      comPaperBtn.classList.add("animation");
-    }, 50);
-    setTimeout(() => {
-      comPaperBtn.style.backgroundColor = "#ffc107";
-      comPaperBtn.classList.remove("animation");
-    }, 500);
+    function animation() {
+      var run = anime.timeline({});
+      run
+        .add({
+          targets: comPaperBtn,
+          scale: {
+            delay: 500,
+            value: 1.2,
+          },
+          backgroundColor: ["#ff0000", "#fcb900"],
+          duration: 1000,
+          easing: "easeInOutBack",
+        })
+        .add({
+          targets: comPaperBtn,
+          scale: {
+            value: 1,
+          },
+          backgroundColor: ["#fcb900", "##FFCA2C"],
+          duration: 1000,
+          easing: "easeInOutBack",
+        });
+    }
+    animation();
     return "PAPER";
   } else {
-    comScissorsBtn.style.backgroundColor = "red";
-    setTimeout(() => {
-      comScissorsBtn.style.backgroundColor = "#ffa507";
-      comScissorsBtn.classList.add("animation");
-    }, 50);
-    setTimeout(() => {
-      comScissorsBtn.style.backgroundColor = "#ffc107";
-      comScissorsBtn.classList.remove("animation");
-    }, 500);
+    function animation() {
+      var run = anime.timeline({});
+      run
+        .add({
+          targets: comScissorsBtn,
+          scale: {
+            delay: 500,
+            value: 1.2,
+          },
+          backgroundColor: ["#ff0000", "#fcb900"],
+          duration: 1000,
+          easing: "easeInOutBack",
+        })
+        .add({
+          targets: comScissorsBtn,
+          scale: {
+            value: 1,
+          },
+          backgroundColor: ["#fcb900", "##FFCA2C"],
+          duration: 1000,
+          easing: "easeInOutBack",
+        });
+    }
+    animation();
     return "SCISSORS";
   }
 }
@@ -71,7 +116,6 @@ const computerScoreBoard = document.getElementById("computer-score");
 
 // lets play!
 function playGame(playerChoice, computerChoice) {
-
   // player & computer choices
   playerChoice = this.querySelector("h4").textContent;
   computerChoice = computerPlay();
@@ -154,17 +198,23 @@ function playGame(playerChoice, computerChoice) {
   const winner = document.getElementById("win_message");
   const playAgain = document.getElementById("play_again");
   if (playerScore == 5 && computerScore == 5) {
-    winner.innerHTML = `WOW! IT'S TIE!!`;
-    modal.classList.add("show");
-    scrollToZero();
+    setTimeout(() => {
+      winner.innerHTML = `WOW! IT'S TIE!!`;
+      modal.classList.add("show");
+      scrollToZero();
+    }, 2500);
   } else if (playerScore == 5) {
-    winner.innerHTML = "YOU WON!";
-    modal.classList.add("show");
-    scrollToZero();
+    setTimeout(() => {
+      winner.innerHTML = "YOU WON!";
+      modal.classList.add("show");
+      scrollToZero();
+    }, 2500);    
   } else if (computerScore == 5) {
-    winner.innerHTML = "YOU LOST!";
-    modal.classList.add("show");
-    scrollToZero();
+    setTimeout(() => {
+      winner.innerHTML = "YOU LOST!";
+      modal.classList.add("show");
+      scrollToZero();
+    }, 2500);      
   }
   // button for reload game
   playAgain.addEventListener("click", () => {
@@ -175,8 +225,8 @@ function playGame(playerChoice, computerChoice) {
     roundNum = 1;
     modal.classList.remove("show");
     playerScoreBoard.classList.remove("red-color");
-    ul.innerHTML = '';
-    scrollY();    
+    ul.innerHTML = "";
+    scrollY();
     // window.location.reload(true);
   });
 }
